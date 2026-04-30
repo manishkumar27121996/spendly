@@ -1,6 +1,11 @@
 from flask import Flask, render_template
+from database.db import init_app, init_db
 
 app = Flask(__name__)
+init_app(app)
+
+with app.app_context():
+    init_db()
 
 
 # ------------------------------------------------------------------ #
